@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #51945d;
+
+  height: 100vh;
+
+  display: grid;
+  grid-template-rows: 1fr 7fr;
+}
+
+/* TOP SECTION */
+header {
+  background-color: #d2cbb3bb;
+  width: 100vw;
+}
+h1 {
+  text-align: center;
+  text-justify: center;
+}
+small {
+  text-align: center;
+  text-justify: center;
+  display: block;
+}
+
+/* MAIN - CARDS */
+main {
+  display: grid;
+  grid-template:
+    ". marcus michael winnie ." 600px/
+    1fr 400px 400px 400px 1fr;
+
+  grid-gap: 2%;
+
+  place-content: center;
+
+  margin: 5px;
+}
+main .person-section {
+  border: solid 1px #d2cbb3;
+  border-radius: 5%;
+
+  background-color: #d2cbb3;
+
+  display: grid;
+  grid-template: 
+  "image" 1fr
+  "quote-book"4fr/
+  auto;
+  1fr 4fr;
+}
+main .person-section.marcus {
+  grid-area: marcus;
+}
+main .person-section.michael {
+  grid-area: michael;
+}
+main .person-section.winnie {
+  grid-area: winnie;
+}
+
+/* MAIN- MARCUS */
