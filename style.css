@@ -49,11 +49,15 @@ main .person-section {
   background-color: #d2cbb3;
 
   display: grid;
-  grid-template: 
-  "image" 1fr
-  "quote-book"4fr/
-  auto;
-  1fr 4fr;
+  grid-template:
+    "name" 0.5fr
+    "image" 1fr
+    "quote-book" 4fr /
+    auto;
+
+  box-shadow: -5px 5px 5px 5px rgba(0, 0, 0, 0.329);
+
+  /* place-items: center; */
 }
 main .person-section.marcus {
   grid-area: marcus;
@@ -64,5 +68,37 @@ main .person-section.michael {
 main .person-section.winnie {
   grid-area: winnie;
 }
+.person-section h2 {
+  grid-area: name;
+  text-align: center;
 
-/* MAIN- MARCUS */
+  text-decoration: underline;
+}
+.person-section div {
+  grid-area: quote-book;
+
+  border: #d3d1c9 2px solid;
+  margin: 5%;
+
+  overflow: scroll;
+
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.person-section div blockquote {
+  border: 1px solid white;
+
+  margin: 3px;
+}
+.person-section img {
+  grid-area: image;
+
+  height: 150px;
+  width: 150px;
+
+  border-radius: 49%;
+  border: 3px solid #51945d;
+}
+
+/* MAIN - MICHAEL SCOTT */
