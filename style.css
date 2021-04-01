@@ -1,23 +1,28 @@
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
 }
 
 body {
+  font-family: "Open Sans", sans-serif;
+
   background-color: #51945d;
 
-  height: 100vh;
+  min-height: 100vh;
 
   display: grid;
-  grid-template-rows: 1fr 7fr;
+  grid-template-rows: auto auto auto;
 }
 
 /* TOP SECTION */
 header {
   background-color: #d2cbb3bb;
-  width: 100vw;
+  padding: 10px;
 }
 h1 {
   text-align: center;
@@ -54,11 +59,15 @@ main .person-section {
     "image" 1fr
     "quote-book" 4fr /
     auto;
-
-  box-shadow: -5px 5px 5px 5px rgba(0, 0, 0, 0.329);
-
-  /* place-items: center; */
+  justify-items: center;
+  align-items: center;
+  box-shadow: -5px 5px 15px 5px rgba(0, 0, 0, 0.329);
 }
+
+.quote-book {
+  height: 350px;
+}
+
 main .person-section.marcus {
   grid-area: marcus;
 }
@@ -80,17 +89,34 @@ main .person-section.winnie {
   border: #d3d1c9 2px solid;
   margin: 5%;
 
-  overflow: scroll;
+  overflow-y: scroll;
 
   display: grid;
   grid-template-rows: auto;
+  grid-gap: 15px;
+}
+
+.quote-book blockquote:nth-child(odd) {
+  background-color: #8d8775;
 }
 
 .person-section div blockquote {
-  border: 1px solid white;
-
   margin: 3px;
+
+  font-size: 80%;
+  font-family: cursive;
+  font-weight: lighter;
+  font-style: italic;
+  text-align: justify;
 }
+
+.quote-name {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  font-variant: small-caps;
+}
+
 .person-section img {
   grid-area: image;
 
@@ -101,4 +127,42 @@ main .person-section.winnie {
   border: 3px solid #51945d;
 }
 
-/* MAIN - MICHAEL SCOTT */
+.person-section.michael div blockquote {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.person-section.winnie div blockquote {
+  font-family: "Indie Flower", cursive;
+}
+footer {
+  background-color: #d2cbb3bb;
+  text-align: center;
+}
+
+@media screen and (max-width: 1250px) {
+  main {
+    grid-template:
+      ". marcus michael ." 600px
+      ". winnie winnie ." 600px/
+      1fr 400px 400px 1fr;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  main {
+    grid-template:
+      ". marcus ." 600px
+      ". michael ." 600px
+      ". winnie ." 600px/
+      1fr 380px 1fr;
+  }
+}
+@media screen and (max-width: 375px) {
+  main {
+    grid-template:
+      ". marcus ." 600px
+      ". michael ." 600px
+      ". winnie ." 600px/
+      1fr 300px 1fr;
+  }
+}
